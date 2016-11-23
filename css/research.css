@@ -425,6 +425,20 @@ a
 .shortSummary { margin-top: 6px; }
 a.customPrimaryLinkContainer { color: #06c; }
 /*************************************************/
+.node {
+  cursor: pointer;
+}
+text.label {color:#72d2f2;}
+.node--middle, node--root {
+  stroke: #999;
+  stroke-width: 1px;
+}
+.label {
+  pointer-events: auto;
+  font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
 
 div#summonbubbles
 {
@@ -519,43 +533,7 @@ textarea.txt
 /**  google  **/
 
 /* Search form */
-.cse form.gsc-search-box,
-form.gsc-search-box
-{
-    margin-bottom: 6px;
-    padding: 8px 4px 2px 6px;
-}
-.cse .gsc-branding-text,
-.gsc-branding-text
-{
-    color: #000;
-}
-/**
- * Table cell containing the search input.
- * 12 pixels added to account for the horizontal padding on the input.
- */
-.cse table.gsc-search-box td.gsc-input,
-table.gsc-search-box td.gsc-input
-{
-    padding-right: 12px;
-}
-.cse .gsc-search-box,
-.gsc-search-box
-{
-    border-collapse: collapse;
-}
-/* Search input 
-.cse input.gsc-input,
-input.gsc-input
-{
-    font-family: inherit;
-    font-size: 16px;
-    width: 99%;
-    padding: 3px 6px;
 
-    border: 1px solid #bbb;
-}
-/* Search button 
 
 /* Base tab selector styles */
 .cse .gsc-tabHeader,
@@ -744,96 +722,6 @@ div.gs-title,
     background-color: #333;
     text-shadow: 0 1px 1px #000;
 }
-/*Promotion Settings*/
-/* The entire promo */
-.cse .gsc-webResult.gsc-result.gsc-promotion,
-.gsc-webResult.gsc-result.gsc-promotion
-{
-    border-color: #ccc;
-    background-color: #e6e6e6;
-}
-/* Promotion links */
-.cse .gs-promotion a.gs-title:link,
-.gs-promotion a.gs-title:link,
-.cse .gs-promotion a.gs-title:link *,
-.gs-promotion a.gs-title:link *,
-.cse .gs-promotion .gs-snippet a:link,
-.gs-promotion .gs-snippet a:link
-{
-    color: #00c;
-}
-.cse .gs-promotion a.gs-title:visited,
-.gs-promotion a.gs-title:visited,
-.cse .gs-promotion a.gs-title:visited *,
-.gs-promotion a.gs-title:visited *,
-.cse .gs-promotion .gs-snippet a:visited,
-.gs-promotion .gs-snippet a:visited
-{
-    color: #00c;
-}
-.cse .gs-promotion a.gs-title:hover,
-.gs-promotion a.gs-title:hover,
-.cse .gs-promotion a.gs-title:hover *,
-.gs-promotion a.gs-title:hover *,
-.cse .gs-promotion .gs-snippet a:hover,
-.gs-promotion .gs-snippet a:hover
-{
-    color: #444;
-}
-.cse .gs-promotion a.gs-title:active,
-.gs-promotion a.gs-title:active,
-.cse .gs-promotion a.gs-title:active *,
-.gs-promotion a.gs-title:active *,
-.cse .gs-promotion .gs-snippet a:active,
-.gs-promotion .gs-snippet a:active
-{
-    color: #0c0;
-}
-/* Promotion snippet */
-.cse .gs-promotion .gs-snippet,
-.gs-promotion .gs-snippet,
-.cse .gs-promotion .gs-title .gs-promotion-title-right,
-.gs-promotion .gs-title .gs-promotion-title-right,
-.cse .gs-promotion .gs-title .gs-promotion-title-right *,
-.gs-promotion .gs-title .gs-promotion-title-right *
-{
-    color: #333;
-}
-/* Promotion url */
-.cse .gs-promotion .gs-visibleUrl,
-.gs-promotion .gs-visibleUrl
-{
-    color: #0c0;
-}
-/* Style for auto-completion table
- * .gsc-completion-selected : styling for a suggested query which the user has moused-over
- * .gsc-completion-container : styling for the table which contains the completions
- */
-.gsc-completion-selected { background: #eee; }
-.gsc-completion-container
-{
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    margin-right: 0;
-    margin-left: 0;
-    border: 1px solid #bbb;
-    background: white;
-    /* The top, left, and width are set in JavaScript. */
-}
-.gsc-completion-title { color: #00c; }
-.gsc-completion-snippet { color: #333; }
-/* Full URL */
-.gs-webResult div.gs-visibleUrl-short, .gs-promotion div.gs-visibleUrl-short { display: none; }
-.gs-webResult div.gs-visibleUrl-long, .gs-promotion div.gs-visibleUrl-long { display: block; }
-.gsc-rating-bar
-{
-    display: inline-block;
-    width: 54px;
-    height: 10px;
-    margin: 3px 0 0 0;
-    background: transparent url(/cse/images/cse_snippets_stars.png) -52px -52px no-repeat;
-}
-
 
 .gsc-richsnippet-popup-box {
   position: relative;
