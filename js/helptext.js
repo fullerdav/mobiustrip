@@ -159,7 +159,7 @@ const summonobj = {
     "suggest": true,
     "tagline": false,
     "popup": true
-};
+}; 
 const summonoptions = {
   "summon": {"type":"category", "label":"Summon Options","value":""},
   "contenttype": {"type":"category", "label":"Content Type","value":""},
