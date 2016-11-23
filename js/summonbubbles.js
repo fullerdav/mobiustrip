@@ -10,7 +10,7 @@ var color = d3.scale.linear()
 var pack = d3.layout.pack()
     .padding(8)
     .size([diameter - margin, diameter - margin])
-    .value(function(d) { return 500; })
+    .value(function(d) { return 450; })
 
 var svg = d3.select("#bubbles").append("svg")
     .attr("width", diameter)
@@ -35,7 +35,7 @@ d3.json("js/summonflare.json", function(error, root) {
       .style("display", function(d) { return d.children ? "#72d2f2" : null; })
       .on("click", function(d) { 
         if (d.depth===1 || d.depth===2) {
-          $("#bubbles").css("border", "1px solid #ccc");
+          $("#bubbles").css("border", "1px solid #333");
         } else {
           $("#bubbles").css("border", "none");
         }
@@ -72,7 +72,7 @@ d3.json("js/summonflare.json", function(error, root) {
       .attr("dy", function(d) {
        
         alt = alt === "+" ? "-" : "+";
-        return summonoptions[d.name].label.length > 12 ? alt + "1.25em" : "+.25em";
+        return summonoptions[d.name].label.length > 12 ? alt + ".75em" : "+.25em";
       })
       .text(function(d) { return summonoptions[d.name].label; });
 
