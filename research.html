@@ -20,7 +20,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/research.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -131,9 +132,7 @@
 	
 <div id="results">
 	<div id="toprow"></div>
- 
 	<iframe id="resultsframe" name="formFrame"></iframe>
-fuckwit
 </div>
 
   <div class="col-xs-2 col3">
@@ -158,29 +157,30 @@ fuckwit
 </div><!--container-->
 
 <footer>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script> 
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/research.js"></script>
-  <script type="text/javascript" src="js/helptext.js"></script>
+  
 
-  <script type="text/javascript" src="//union.summon.serialssolutions.com/widgets/box.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/helptext.js"></script>
+  <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script> 
+ 
+  <script type="text/javascript" src="js/research.js"></script>
+ 
+ 
+ 
+
+<script type="text/javascript" src="//union.summon.serialssolutions.com/widgets/box.js"></script>
+<script>
+    var makeSummonBox = new Promise(function(resolve, reject) {
+         summonWidget.box(summonobj);
+     });
+      	
+    console.timeEnd("research");
+</script>
+
   <script type="text/javascript" src="js/d3.v3.min.js" async defer></script>
   <script type="text/javascript" src="js/summonbubbles.js" async defer></script>
-  <script type="text/javascript" async>
-      var makeSummonBox = new Promise(function(resolve, reject) {
-          summonWidget.box(summonobj);
-      });
-      
-      makeSummonBox.then(function() {  window.setTimeout(function() { 
-          if (research.hasBox("#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1")) {
-              resolve();
-          }
-         }, 1000);}, null);
-      	
-      	 console.timeEnd("research");
-    </script>
-
+  
   </footer>
 </div>	
 

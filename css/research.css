@@ -9,7 +9,10 @@ div {background:#6297A9
 div {background:#668CAD 
 div {background:#4A779D
 div {background:#6b7071;}
-
+google colors 
+#0000CC link
+#008000 url
+#000 snippet
 Key fskevWl30fzOTI6v2lGkK8zVCJukha91Mlvdsn4CNstrVKw8Qhrzp3K7hpIrn49uEgEJxFkVweR3qFRk
 Secret OEEgXex1uH814EcpOz81Lw==
 
@@ -55,7 +58,7 @@ div {display:block;}
   border-right: 1px solid #ddd;
 }
 #footer { display: none; height:0px}
-#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1 { display: none;}
+#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1, .gsc-git add js/summonflare.jsonadBlock { display: none;}
 
 #hanger { 
   width: 96%; 
@@ -65,19 +68,26 @@ div {display:block;}
 }
 
 input[type=text] {
-  height: 36px;
-  width:254px; 
-  padding:4px; 
-  border: 2px solid #aaa;
+  height: 2.2em;
+  width: 60%; 
+  padding: .5em; 
+  border-bottom: 2px solid #aaa;
+  border-raduius: 2px;
   text-align: left;
   display: inline-block; 
-  letter-spacing: 2px;           
+  letter-spacing: 2px;
+  white-space: no-wrap;           
   word-spacing: 8px; 
-  margin: 0;
+  background-color: #fff;
+  vertical-align: middle;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+  transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .btn, .summon-search-submit, input.gsc-search-button {
   display: inline-block;
+  height:2em;
+  width: 15%
   cursor: pointer;
   padding: .3em 1em;
   background: #0e7bba;
@@ -86,7 +96,7 @@ input[type=text] {
   font-size: 1.1em;
   line-height: 1.6em;
   text-align:center;
-  vertical-align:middle;
+  vertical-align: middle;
   border-radius:4px;
   -webkit-border-radius:4px;
   -moz-border-radius:4px;
@@ -94,24 +104,25 @@ input[type=text] {
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 }
-   
+
 .widget {
-  width: 80%; 
-  margin: 8px auto; 
+  width: 90%; 
+  margin: .5em auto; 
+  border: 4px solid #002873; 
   border-radius: 8px;
 }
 .widget-body {
-  padding: 10px;
-  min-height: 72px;
+  padding: 1em;
   border-radius: 4px;
 }
 .widget-heading { 
-  padding: 6px;
+  padding: 1em;
   font-size: 1.1em; 
   color:#333;
-  min-height: 2em;
   text-shadow: 0 1px 1px rgba(255,255,255,0.75);
   border-radius: 4px;
+  background: #b4c8f0;
+  opacity:.8;
 }
 .widget[id^="az"] {border: 4px solid #8ab4f7; }
 .widget[id^="az"] .widget-heading { background: #e5efff;}
@@ -122,12 +133,8 @@ input[type=text] {
 .widget[id^="schaffer"] {border: 4px solid #792000;}
 .widget[id^="schaffer"] .widget-heading { background: #f9d47c;}
 .widget[id^="cny"] {border: 4px solid #b56565;}
-.widget[id^="cny"] .widget-heading { background: #e27373;}
-#00E050
-#A0E0E0
-#10C0B0
-#206080
-#E020b0
+.widget[id^="cny"] .widget-heading { background: #ffa1a1;}
+
 
 #hanger .panel-title {min-height: 4em;}
 .panel-title > a { text-decoration: none;}
@@ -203,7 +210,7 @@ div.nextslide
 {
     font-size: .8em;
     width: 80%;
-    height: 30px;
+    height: auto;
     margin: 12px auto;
     padding: 6px 0;
     text-align: center;
@@ -268,11 +275,10 @@ cite
     height: 100%;
     visibility: hidden;
     overflow-x: hidden;
-    z-index: 102;
+    z-index: 100;
     border: none;
     border-collapse: separate;
-    transition: 1.25s;
-    opacity: .05;
+    transition: 1s;
     
       -webkit-user-select: text;
       user-select:  text;
@@ -424,18 +430,26 @@ a
 .author,
 .shortSummary { margin-top: 6px; }
 a.customPrimaryLinkContainer { color: #06c; }
+
 /*************************************************/
+
 .node {
   cursor: pointer;
 }
-text.label {color:#72d2f2;}
+
 .node--middle, node--root {
-  stroke: #999;
+  stroke: #e020b0;
   stroke-width: 1px;
 }
-.label {
+
+.node--leaf{
+  color:#fff;
+}
+
+text.label {
+  color: #72d2f2;
   pointer-events: auto;
-  font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-anchor: middle;
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
@@ -530,244 +544,3 @@ textarea.txt
     alignment-baseline: bottom;
 }
 
-/**  google  **/
-
-/* Search form */
-
-
-/* Base tab selector styles */
-.cse .gsc-tabHeader,
-.gsc-tabHeader
-{
-    font-size: 11px;
-    font-weight: bold;
-
-    padding: 2px 8px 0 8px;
-
-    text-transform: uppercase;
-}
-/* Inactive tab */
-.cse .gsc-tabHeader.gsc-tabhInactive,
-.gsc-tabHeader.gsc-tabhInactive
-{
-    color: #fff;
-    border: 1px solid;
-    border-color: #777;
-    border-bottom: none;
-    background-color: #777;
-}
-/* Active tab */
-.cse .gsc-tabHeader.gsc-tabhActive,
-.gsc-tabHeader.gsc-tabhActive
-{
-    color: #fff;
-    border: 1px solid;
-    border-color: #333;
-    border-bottom: none;
-    background-color: #333;
-}
-/* This is the tab bar bottom border. */
-.cse .gsc-tabsArea,
-.gsc-tabsArea
-{
-    margin-top: 1em;
-    padding: 0;
-
-    border-bottom: 1px solid #333;
-}
-/* Inactive refinement */
-.cse .gsc-refinementHeader.gsc-refinementhInactive,
-.gsc-refinementHeader.gsc-refinementhInactive
-{
-    color: #444;
-}
-.cse .gsc-resultsHeader,
-.gsc-resultsHeader
-{
-    margin: 0;
-
-    border: block;
-}
-/* Wrapper for all results */
-.cse .gsc-results,
-.gsc-results
-{
-    width: 100%;
-    margin-top: 1em;
-}
-/* Uber-wrapper for a result. Add padding to elements within a result block */
-.cse .gs-result div.gs-title,
-div.gs-title,
-.cse .gs-result .gs-snippet,
-.gs-result .gs-snippet,
-.cse .gs-result .gs-visibleUrl,
-.gs-result .gs-visibleUrl,
-.cse .gs-spelling,
-.gs-spelling
-{
-    padding: 0;
-}
-/* Font size */
-.cse .gs-result .gs-snippet,
-.gs-result .gs-snippet,
-.cse .gs-spelling-original,
-.gs-spelling-original
-{
-    font-size: 14px;
-    line-height: 18px;
-}
-/* Inner wrapper for a result */
-.cse .gsc-webResult.gsc-result,
-.gsc-webResult.gsc-result,
-.gsc-imageResult-classic,
-.gsc-imageResult-column
-{
-    margin-bottom: 1em;
-    padding: 0 0 0 .5em;
-
-    border-color: #fff;
-    border-bottom: 0 solid;
-    border-left: 1px solid;
-}
-/* Result hover event styling */
-.cse .gsc-webResult.gsc-result:hover,
-.gsc-webResult.gsc-result:hover,
-.gsc-webResult.gsc-result.gsc-promotion:hover,
-.gsc-results .gsc-imageResult-classic:hover,
-.gsc-results .gsc-imageResult-column:hover
-{
-    border-color: #000;
-    border-bottom: 0 solid;
-    border-left: 1px solid;
-}
-/* Set link colors. */
-.cse .gs-webResult.gs-result a.gs-title:link,
-.gs-webResult.gs-result a.gs-title:link,
-.cse .gs-webResult.gs-result a.gs-title:link b,
-.gs-webResult.gs-result a.gs-title:link b,
-.cse .gs-webResult.gs-result a.gs-title:visited,
-.gs-webResult.gs-result a.gs-title:visited,
-.cse .gs-webResult.gs-result a.gs-title:visited b,
-.gs-webResult.gs-result a.gs-title:visited b,
-.cse .gs-webResult.gs-result a.gs-title:hover,
-.gs-webResult.gs-result a.gs-title:hover,
-.cse .gs-webResult.gs-result a.gs-title:hover b,
-.gs-webResult.gs-result a.gs-title:hover b,
-.gs-imageResult a.gs-title:link,
-.gs-imageResult a.gs-title:link b,
-.gs-imageResult a.gs-title:visited,
-.gs-imageResult a.gs-title:visited b,
-.gs-imageResult a.gs-title:hover,
-.gs-imageResult a.gs-title:hover b,
-.cse .gsc-cursor-page,
-.gsc-cursor-page,
-.cse .gsc-trailing-more-results:link,
-.gsc-trailing-more-results:link,
-.cse .gs-spelling a,
-.gs-spelling a
-{
-    color: #444;
-}
-.cse .gs-webResult.gs-result a.gs-title:active,
-.gs-webResult.gs-result a.gs-title:active,
-.cse .gs-webResult.gs-result a.gs-title:active b,
-.gs-webResult.gs-result a.gs-title:active b,
-.gs-imageResult a.gs-title:active,
-.gs-imageResult a.gs-title:active b
-{
-    color: #777;
-}
-/* Snippet text color */
-.cse .gs-webResult .gs-snippet,
-.gs-webResult .gs-snippet,
-.gs-fileFormatType,
-.gs-imageResult .gs-snippet
-{
-    color: #333;
-}
-
-/* Size text color */
-.gs-imageResult .gs-size,
-.gs-imageResult .gs-size
-{
-    color: #333;
-}
-
-/* URL text color */
-.cse .gs-webResult .gs-visibleUrl,
-.gs-webResult .gs-visibleUrl,
-.cse .gs-webResult .gs-visibleUrl-short,
-.gs-webResult .gs-visibleUrl-short,
-.gs-imageResult .gs-visibleUrl,
-.gs-imageResult .gs-visibleUrl-short
-{
-    font-weight: bold;
-    color: #000;
-}
-/* Pagination container centered */
-.cse .gsc-cursor-box,
-.gsc-cursor-box
-{
-    padding: .5em 0 0 .5em;
-    text-align: left;
-    border-color: #333;
-    border-top: 1px dotted;
-}
-/* Selected pagination */
-.cse .gsc-results .gsc-cursor-page.gsc-cursor-current-page,
-.gsc-results .gsc-cursor-page.gsc-cursor-current-page
-{
-    padding: 0 5px;
-    color: #fff;
-    background-color: #333;
-    text-shadow: 0 1px 1px #000;
-}
-
-.gsc-richsnippet-popup-box {
-  position: relative;
-}
-.gsc-results-wrapper-visible {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-.gsc-results-wrapper-overlay {
-    border: none;
-    margin: auto;
-    border-radius: 1px;
-    overflow: auto;
-    height: 80%;
-    -webkit-box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.4);
-    -moz-box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.4);
-    -ms-box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.4);
-    -o-box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.4);
-    box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.4);
-    border-collapse: separate;
-    background: white;
-    padding: 30px;
-    width: 70%;
-    position: fixed !important;
-    top: 5%;
-    left: 12%;
-    opacity: 0;
-    z-index: 100002;
-    visibility: hidden;
-    -webkit-transition: all 0.25s linear;
-    -moz-transition: all 0.25s linear;
-    -ms-transition: all 0.25s linear;
-    -o-transition: all 0.25s linear;
-    transition: all 0.25s linear;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#888888')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#888888');
-}
-
-
-.gsc-control-cse {
-    font-family: Arial, sans-serif;
-    border-color: #FFFFFF;
-    background-color: #FFFFFF;
-}
-.gsc-control-cse, .gsc-control-cse .gsc-table-result {
-    width: 100%;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-}

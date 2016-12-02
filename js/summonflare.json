@@ -1,0 +1,91 @@
+{
+ "name": "summon",
+ "children": [
+  {
+   "name": "refine",
+   "size":800,
+   "children": [
+      {"name":"fulltext","size":500},
+      {"name":"peerreview","size":300},
+      {"name":"catalog","size":500}
+    ]
+  },
+  {
+   "name": "contenttype",
+   "children": [
+            {"name":"book","size":600},
+            {"name":"bookreview","size":600},
+            {"name":"reference","size":600},
+            {"name":"archives","size":800},
+            {"name":"conference","size":800},
+            {"name":"narrative","size":900},
+            {"name":"videostream","size":600},
+            {"name":"videorecording","size":600},
+            {"name":"tradepublication","size":600},
+            {"name":"play","size":300},
+            {"name":"poem","size":300},
+            {"name":"newspaper","size":300},
+            {"name":"newsarticle","size":500},
+            {"name":"marketresearch","size":400},
+            {"name":"manuscript","size":300},
+            {"name":"govdoc","size":500},
+            {"name":"audiorecording","size":600},
+            {"name":"dissertation", "size":500}
+    ]
+  },
+  {
+    "name": "discipline",
+    "children": [
+          {"name":"anthropology","size":400},
+          {"name":"astronomy","size":600},
+          {"name":"biology","size":300},
+          {"name":"business","size":300},
+          {"name":"chemistry","size":400},
+          {"name":"computer","size":600},
+          {"name":"dance","size":300},
+          {"name":"drama","size":300},
+          {"name":"economics","size":300},
+          {"name":"education","size":300},
+          {"name":"engineering","size":300},
+          {"name":"environment","size":600},
+          {"name":"film","size":300},
+          {"name":"geography","size":300},
+          {"name":"geology","size":300},
+          {"name":"history","size":300},
+          {"name":"languages","size":600},
+          {"name":"law","size":300},
+          {"name":"mathematics","size":400},
+          {"name":"medicine","size":400},
+          {"name":"music","size":300},
+          {"name":"philosophy","size":300},
+          {"name":"physics","size":300},
+          {"name":"polisci","size":500},
+          {"name":"psychology","size":400},
+          {"name":"publichealth","size":500},
+          {"name":"religion","size":300},
+          {"name":"sociology","size":300},
+          {"name":"visualarts","size":500},
+          {"name":"women","size":500}
+         ]
+        },
+        {
+         "name": "subjectterms",
+         "children": [
+            {"name":"newsreel","size":300},
+            {"name":"interviews","size":300},
+            {"name":"acqmergers","size":500},
+            {"name":"bookreview","size":300},
+            {"name":"cities","size":200},
+            {"name":"councils","size":500},
+            {"name":"forecasts","size":500},
+            {"name":"healthaspects","size":500},
+            {"name":"meetings","size":300},
+            {"name":"methods","size":200},
+            {"name":"reports","size":250},
+            {"name":"research","size":250},
+            {"name":"software","size":250},
+            {"name":"statistics","size":300}
+         ]
+        }
+     ]
+  }

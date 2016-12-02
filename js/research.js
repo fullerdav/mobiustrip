@@ -71,18 +71,20 @@ const research = {
     newdivs:[],
     temp:{},
     gbox: null,
+    cx: null,
     clear: function() {
         this.newdivs=[];
         summonobj.params.fvf = [];
-        $("head>script[src*=cse]").remove();
+        this.hasGoogle() ? google=null : true;
+        $("#hanger").hide( "fold", {horizFirst: true}, 1500 );
+        $("#hanger").empty();  
+        
+       $("head>script[src*=cse]").remove();
         $("head>script[src*=libapps]").remove();
         $("head>link[href*=google]").remove();
         $("head>style[type*=text]").remove();
-        $("#hanger").hide( "fold", {horizFirst: true}, 2000 );
-       //$("#hanger").toggle("explode", {pieces:144}, 1000);
-        if ($("#hanger").length > 0) {
-            $("#hanger").empty();  
-        }
+        
+    
         $('#myCarousel').carousel({interval:""});
         $("div.carousel-inner").empty();
     },
@@ -109,10 +111,15 @@ const research = {
     hasGCSEtag: function() {
       return document.getElementsByTagName('gcse:search').length > 0;
     },
+    turnGoogleOn: function() { 
+        if (this.hasGCSEtag() && this.cx !== null) {
+              research.runGCSE(this.cx);
+        }
+    },
     makeIntro: function() {
-        for ( let i=0; i < sources.intro.slides.length; i++ ) {
-          this.makeSummonSlide(sources.intro.slides[i]);
-       }
+     for ( let i=0; i < sources.intro.slides.length; i++ ) {
+        this.makeSummonSlide(sources.intro.slides[i]);
+      }
       $("<div></div>").addClass("previewFrame").html(sources.intro.text).appendTo($("#hanger"));
       $("#myCarousel").show();
       $(".previewPane").show( "fold", {horizFirst: true}, 4000 );
@@ -140,71 +147,43 @@ const research = {
       if (!this.hasBox("#summonbubbles")) {
         let ul = $("<ul></ul>").attr("id", "bubblepanel").append($("<li></li>").addClass("bubbleheader").text("Your search will be limited by:"));
         let ndiv = $("<div></div>").attr("id", "summonbubbles").append(ul).append($("<div></div>").attr("id", "bubbles"));
-        //ndiv.append(ul);
         this.newdivs.push(ndiv);
       }
     },
     makeGCSE: function(o) {
-      this.gbox = research.runGCSE(o.cx);
       research.makePanel(o, "<gcse:search></gcse:search>");
+      this.cx = o.cx;
+
+      //this.gbox = research.runGCSE(o.cx);
+      //research.makePanel(o, "<gcse:search></gcse:search>");
     },
     runGCSE: function(cx){
-      return function() {
+      //return function() {
         let gcse = document.createElement('script');
         gcse.type = 'text/javascript';
         gcse.async = true;
         gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
+        let s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(gcse, s);
-      };
-    },
-    makeWizard: function() {
-      var lwz_options_5ea3272fae737b2848515b22e66336d5 = {
-          "title" : "standalone",
-          "width" : "1024",
-          "height": "800",
-          "fg": "#000000",
-          "bg": "#f7941d",
-          "pos": "50%",
-          "side": "left",
-          "button": "Display Help",
-          "loadjq": true
-        };
-       let lzw = document.createElement('script');
-       let id = "5ea3272fae737b2848515b22e66336d5";
-        lzw.type = 'text/javascript';
-        lzw.async = true;
-        lzw.src = '//union.libwizard.com/lwz_load_tutorial.php?id=' + id;
-        $("#results").append(lzw);
-    },
-     makeTeacher: function() {
-      
-       let lzw = document.createElement('script');
-       let id = "5ea3272fae737b2848515b22e66336d5";
-        lzw.type = 'text/javascript';
-        lzw.async = true;
-        lzw.src = '//union.libwizard.com/lwz_load_tutorial.php?id=' + id;
-        $("#results").append(lzw);
+      //};
     },
     makePanel: function(src, searchwidget) {
-      let head = $('<div></div>').addClass("widget-heading").attr("id", "gcse").html(src.name);
-      head.on("mouseover", function() {
-          if (research.hasGCSEtag() && research.gbox !== null) { 
-             research.gbox();
-          }
-      });
+      let head = $('<div></div>').addClass("widget-heading").attr("id", src.id).html(src.name);
+      if (src.type === "gcse") {
+        head.on("mouseover", function() { research.turnGoogleOn();});  
+      }
       let body = $('<div></div>').addClass("widget-body").append(searchwidget);
       this.newdivs.push($("<div></div>").addClass("widget").attr("id", src.id).append(head).append(body));
     },
     makeButton: function() {
-      return $("<button></button>").addClass("formSearch btn").attr("type", "submit").html('<i class="fa fa-search">Search</i>');
+      return $("<button></button>").addClass("formSearch btn").attr("type", "submit").html('<i class="fa fa-search"></i>');
     },
     makeForm: function(obj) {
       let headtxt = obj.name + '<span class="comments">' + obj.text + '</span>';
       let frm = $("<form></form").attr("method", obj.method).attr("target","formFrame").attr("action", obj.url);
       
       if (obj.type === "form") {
-        frm.append($("<input></input>").attr("type","text").attr("size","30").html('<i class="fa fa-search">Search</i>'));
+        frm.append($("<input></input>").attr("type","text").attr("size","30").html('<i class="fa fa-search"></i>'));
         frm.attr("name", obj.inputname).on("focus", function() {this.value = "";});
       }
       frm.append(this.makeButton());
@@ -332,24 +311,19 @@ const research = {
                   
       $('#myCarousel').carousel('pause');
 
-        for ( let i = 0; i < research.newdivs.length; i++ ) {
+      for ( let i = 0; i < research.newdivs.length; i++ ) {
           research.newdivs[i].appendTo("#hanger");
-        }
-        if (research.hasBox("#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1")) {
+      }
+      if (research.hasBox("#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1")) {
           $("input.summon-search-submit").addClass('formSearch');
-          $("#summonSearchTerms540f45ce18eb440bc83586bce4b8ef1").css("width", "254px");
+          $("#summonSearchTerms540f45ce18eb440bc83586bce4b8ef1").css("width", "60%");
           $("#summonSubmissionForms540f45ce18eb440bc83586bce4b8ef1").attr("target", "formFrame");
           $("#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1").show();
-        }
-        research.hasBox("#summonbubbles") ? bb() : null;
-        $("#hanger").show( "fold", {horizFirst: false}, 1800 );
-      
-      window.setTimeout(function() { 
-          if (research.hasGCSEtag() && research.gbox !== null) {
-              research.gbox();
-          }
-        }, 1500);
-
+      }
+      research.hasBox("#summonbubbles") ? bb() : null;
+      research.turnGoogleOn();
+      $("#hanger").show( "fold", {horizFirst: false}, 1800 );
+     // window.setTimeout(function() { research.turnGoogleOn(); }, 1500);
     }
 };
  

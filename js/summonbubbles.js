@@ -30,9 +30,9 @@ d3.json("js/summonflare.json", function(error, root) {
       .data(nodes)
     .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node node--middle" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { return d.parent ? d.children ? "#72d2f2" : "#ffffb9" : "transparent"; })
-      //.style("fill", function(d) { return d.children ? color(d.depth) : null; })
-      .style("display", function(d) { return d.children ? "#72d2f2" : null; })
+      .style("fill", function(d) { return d.parent ? d.children ? "#fdb5ff" : "#ff00b9" : "transparent"; })
+      //.style("fill", function(d) { return d.children ?  color(d.depth) : null; })
+      //.style("display", function(d) { return d.children ? "#fff" : null; })
       .on("click", function(d) { 
         if (d.depth===1 || d.depth===2) {
           $("#bubbles").css("border", "1px solid #333");
@@ -43,7 +43,7 @@ d3.json("js/summonflare.json", function(error, root) {
           let option = summonoptions[d.name].value;
           if (!summonobj.params.fvf.includes(option)) {
             let xbutton = $("<i class='glyphicon glyphicon-remove'></i>");
-            let htmlsrc= summonoptions[d.parent.name].label + ": " + summonoptions[d.name].label;
+            let htmlsrc = summonoptions[d.parent.name].label + ": "  + d.name;
             let li = $("<li></li>").addClass("bubblefilter");
             li.text(htmlsrc).on("click", function() {
               summonobj.params.fvf.pop(option);
