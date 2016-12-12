@@ -14,6 +14,11 @@ $(document).ready(function () {
         $("#results").toggleClass("results-visible");
     });
 
+     $( "#hanger" ).bind("DOMNodeInserted", function( objEvent ){
+          console.log("Node inserted: " + $(objEvent.target).attr("id"));
+     });
+  
+
     $(".searchtypes").mouseover(function() {
         $("#dropper").toggleClass("draghover");
         $(this).toggleClass("draghover");
@@ -41,6 +46,7 @@ $(document).ready(function () {
     function modalClose() {
       if ($("#results").hasClass("results-visible")) {
         $("#results").removeClass("results-visible");
+        $("#resultsframe").empty();
       }
     }
     $("#results").on("click", () => {
@@ -58,10 +64,10 @@ $(document).ready(function () {
   //results window
 
   $("#myCarousel").carousel({interval:3000, pause:"hover", wrap: false});
-  
+ 
   research.makeIntro();
   $("#content").fadeIn(2500);
-
+ 
 });
 
 //end of document ready
@@ -117,8 +123,8 @@ const research = {
         }
     },
     makeIntro: function() {
-     for ( let i=0; i < sources.intro.slides.length; i++ ) {
-        this.makeSummonSlide(sources.intro.slides[i]);
+      for ( let i=0; i < sources.intro.slides.length; i++ ) {
+          this.makeSummonSlide(sources.intro.slides[i]);
       }
       $("<div></div>").addClass("previewFrame").html(sources.intro.text).appendTo($("#hanger"));
       $("#myCarousel").show();
@@ -153,9 +159,6 @@ const research = {
     makeGCSE: function(o) {
       research.makePanel(o, "<gcse:search></gcse:search>");
       this.cx = o.cx;
-
-      //this.gbox = research.runGCSE(o.cx);
-      //research.makePanel(o, "<gcse:search></gcse:search>");
     },
     runGCSE: function(cx){
       //return function() {
@@ -199,35 +202,6 @@ const research = {
         }
       }
       this.makePanel(obj, frm);
-  },
-  toHex: function(num) {
-    let ohex = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"};
-    let p2 = num % 16;
-    let p1 = num < 16 ? 0 : (num-p2)/16;
-    p1 = p1 < 10 ? p1 : ohex[p1];
-    p2 = p2 < 10 ? p2 : ohex[p2];
-    try {
-      return p1.toString() + p2.toString();
-    } catch(e) {
-      console.log(num)
-    }
-    
-  },
-  addSwatch: function(r,g,b) {
-      let col = "#" + this.toHex(r) + this.toHex(g) + this.toHex(b);
-      $("<div></div").addClass("swatch").css("background", col).appendTo("#hanger");
-  },
-  rgb2Hex() {
-    var red=0, green=0, blue=0;
-    for (red=0; red < 256; red = red + 16) {
-     // this.addSwatch(red, green, blue); 
-      for (green = 0; green < 256; green = green + 16) {
-       // this.addSwatch(red, green, blue); 
-        for (blue = 0; blue < 256; blue = blue + 16) {
-          this.addSwatch(red, green, blue); 
-        }
-      }  
-    }
   },
   newOED: function() {
     let frm = $("<form></form>").append($("<input></input>").attr("type", "text").attr("id", "oxford"));

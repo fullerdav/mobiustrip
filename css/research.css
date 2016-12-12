@@ -58,7 +58,7 @@ div {display:block;}
   border-right: 1px solid #ddd;
 }
 #footer { display: none; height:0px}
-#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1, .gsc-git add js/summonflare.jsonadBlock { display: none;}
+#summonBoxContainers540f45ce18eb440bc83586bce4b8ef1, .gsc-adBlock { display: none;}
 
 #hanger { 
   width: 96%; 
@@ -77,14 +77,14 @@ input[type=text] {
   display: inline-block; 
   letter-spacing: 2px;
   white-space: no-wrap;           
-  word-spacing: 8px; 
+  word-spacing: 4px; 
   background-color: #fff;
   vertical-align: middle;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-.btn, .summon-search-submit, input.gsc-search-button {
+.btn, .summon-search-submit {
   display: inline-block;
   height:2em;
   width: 15%
@@ -143,6 +143,8 @@ span.glyphicon-arrow-right { padding: 6px; }
 div.panel-heading { padding: 8px; }
 .panel { width: 100%; margin: 8px auto; }
 
+i.glyphicon {margin-left:6px; vertcal-align:middle;}
+
 span.message
 {
     margin-top: 0;
@@ -164,9 +166,9 @@ span.comments
 .carousel .item { background-color: #fefefe; }
 
 
-.carousel-control { width: 40px;}
-a.left { background-image:linear-gradient(to right,rgba(255,255,255,.8) 0,rgba(255,255,255,.0001) 100%);}
-a.right { background-image:linear-gradient(to leftt,rgba(255,255,255,.8) 0,rgba(255,255,255,.0001) 100%);}
+.carousel-control { width: 80px;}
+a.left.carousel-control { background:linear-gradient(to right,rgba(255,255,255,.8) 0,rgba(255,255,255,.0001) 100%);}
+a.right { background:linear-gradient(to left,rgba(255,255,255,.8) 0,rgba(255,255,255,.0001) 100%);}
 
 
 div.slide {
@@ -279,7 +281,8 @@ cite
     border: none;
     border-collapse: separate;
     transition: 1s;
-    
+    background:#3f4c58;
+    opacity:.6;
       -webkit-user-select: text;
       user-select:  text;
 }
@@ -435,21 +438,23 @@ a.customPrimaryLinkContainer { color: #06c; }
 
 .node {
   cursor: pointer;
+  stroke: #000;
+  stroke-width: 1px;
 }
 
 .node--middle, node--root {
-  stroke: #e020b0;
+  stroke: #000;
   stroke-width: 1px;
 }
 
 .node--leaf{
-  color:#fff;
+  z-index: -1;
 }
 
 text.label {
   color: #72d2f2;
   pointer-events: auto;
-  font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: .85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-anchor: middle;
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
@@ -462,7 +467,7 @@ div#summonbubbles
 div#bubbles
 {
     display: inline;
-    float: left;
+    margin:auto;
     width: 100%;
 }
 #bubblepanel

@@ -4,7 +4,7 @@ var margin = 15,
 
 var color = d3.scale.linear()
     .domain([1, 2])
-    .range(["hsl(200,65%,75%)", "hsl(200,75%,75%)"])
+    .range(["hsl(298,100%,85%)", "hsl(298,100%,60%)"])
     .interpolate(d3.interpolateHcl);
 
 var pack = d3.layout.pack()
@@ -30,20 +30,21 @@ d3.json("js/summonflare.json", function(error, root) {
       .data(nodes)
     .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node node--middle" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { return d.parent ? d.children ? "#fdb5ff" : "#ff00b9" : "transparent"; })
-      //.style("fill", function(d) { return d.children ?  color(d.depth) : null; })
-      //.style("display", function(d) { return d.children ? "#fff" : null; })
+      .style("fill", function(d) { return d.children ? color(d.depth) : "transparent";  })
+      .style("stroke", function(d) { return "1px solid #666";})
       .on("click", function(d) { 
         if (d.depth===1 || d.depth===2) {
-          $("#bubbles").css("border", "1px solid #333");
+          $("#bubbles>svg").css("border", "1px solid #000");
+          circle.style("fill", function(d) { return d.children ? color(d.depth) : "#fff";});
         } else {
           $("#bubbles").css("border", "none");
+          circle.style("fill", function(d) { return d.children ? color(d.depth) : "transparent"; })
         }
         if (typeof d.children === 'undefined' && d.parent===focus) {
           let option = summonoptions[d.name].value;
           if (!summonobj.params.fvf.includes(option)) {
             let xbutton = $("<i class='glyphicon glyphicon-remove'></i>");
-            let htmlsrc = summonoptions[d.parent.name].label + ": "  + d.name;
+            let htmlsrc = summonoptions[d.parent.name].label + ": "  + summonoptions[d.name].label;
             let li = $("<li></li>").addClass("bubblefilter");
             li.text(htmlsrc).on("click", function() {
               summonobj.params.fvf.pop(option);
@@ -58,6 +59,10 @@ d3.json("js/summonflare.json", function(error, root) {
           zoom(d), d3.event.stopPropagation();
           return;
         }
+        if (d.depth === 2) {
+           zoom(d.parent), d3.event.stopPropagation();
+          return;
+        }
         
       });
 
@@ -70,9 +75,8 @@ d3.json("js/summonflare.json", function(error, root) {
         return d.parent === root ? "inline" : "none"; 
       })
       .attr("dy", function(d) {
-       
         alt = alt === "+" ? "-" : "+";
-        return summonoptions[d.name].label.length > 12 ? alt + ".75em" : "+.25em";
+        return summonoptions[d.name].label.length > 12 ? alt + ".5em" : ".5em";
       })
       .text(function(d) { return summonoptions[d.name].label; });
 
