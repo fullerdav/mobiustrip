@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>the mobius trip</title>
+
+<script type="text/javascript">
+  console.time("research");
+</script>
+   
+    <!--link href="semantic-ui/semantic.min.css" rel="stylesheet"-->
+    <!--link href="data:text/css;charset=utf-8," rel="stylesheet" data-href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" id="bs-theme-stylesheet"-->
+  
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!--link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/research.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  
+          <div class="row page-header">
+          <h1>the mobius trip<span class="subheading">exploring library resources</span></h1>
+          </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="myCarousel" class="carousel slide">
+          <div class="carousel-inner" role="listbox"></div>
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+    </div>
+  </div>
+
+    <div class="row" id="content">
+      <div class="col-xs-3"  id="col1">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel-heading">
+            researching...
+          </div>
+          <div class="panel"> 
+            <div class="panel-heading" role="tab" id="heading1">
+                <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#choosing" aria-expanded="false" aria-controls="choosing">
+                Getting Started
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h4>
+            </div>
+            <div id="choosing" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                <div class="panel-body">
+                    <a class="boxlike" id="topic">choosing a topic</a>
+                    <a class="boxlike" id="problem">question: what is a problem?</a> 
+                    <a class="boxlike" id="conversation">the scholarly conversation</a>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading" role="tab" id="heading2">
+                  <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#gettingsummon" aria-expanded="false" aria-controls="gettingsummon">
+                  getting Summon<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h4>
+                </div>
+                <div id="gettingsummon" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                  <div class="panel-body">
+                   <a class="boxlike" id="summonbubbles">Summon Bubbles</a>
+                  </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading" role="tab" id="heading3">
+                  <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#evaluating" aria-expanded="false" aria-controls="evaluating">
+                  evaluating sources
+                  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h4>
+                </div>
+                <div id="evaluating" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+                  <div class="panel-body">
+                   
+                  </div>
+                </div>
+              </div>
+                <div class="panel">
+                <div class="panel-heading" role="tab" id="heading4">
+                  <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#citing" aria-expanded="false" aria-controls="citing">
+                   Citing...
+                  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h4>
+                </div>
+                <div id="citing" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                  <div class="panel-body">
+                   
+                  </div>
+                </div>
+              </div>
+                <div class="panel">
+                <div class="panel-heading" role="tab" id="heading5">
+                  <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#examples" aria-expanded="false" aria-controls="examples">
+                   Examples
+                  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h4>
+                </div>
+                <div id="examples" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                  <div class="panel-body">
+                   
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>  
+
+      </div>
+
+      <div class="col-xs-7 col2"> 
+      <div id="hanger"></div>
+      </div>
+	
+<div id="results">
+	<div id="toprow"></div>
+	<iframe id="resultsframe" name="formFrame"></iframe>
+</div>
+
+  <div class="col-xs-2 col3">
+   <div class="panel-heading">
+            searching...
+          </div>
+    <div class="widgets">
+      <div id="dropper" class="dropper">make widgets</div>  
+        <div class="searchtypes" id="books">books</div>
+        <div class="searchtypes" id="articles">articles</div>
+        <div class="searchtypes" id="reference">reference</div>
+        <div class="searchtypes" id="primarysources">primary sources</div>
+        <div class="searchtypes" id="digitalarchives">digital archives</div>
+        <div class="searchtypes" id="datasets">datasets</div>
+        <div class="searchtypes" id="blogs">expert opinion (OK, blogs)</div>
+        <div class="searchtypes" id="thinktanks">policy: think tanks</div>
+        <div class="searchtypes" id="newspapers">newspapers</div>
+        <div class="searchtypes" id="videos">videos</div>
+    </div>
+  </div>
+
+
+
+  </div><!--row-->
+</div><!--container-->
+
+<footer>
+  
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/helptext.js"></script>
+  <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script> 
+ 
+  <script type="text/javascript" src="js/research.js"></script>
+ 
+ 
+ 
+
+<script type="text/javascript" src="//union.summon.serialssolutions.com/widgets/box.js"></script>
+<script>
+    var makeSummonBox = new Promise(function(resolve, reject) {
+         summonWidget.box(summonobj);
+     });
+      	
+    console.timeEnd("research");
+</script>
+
+  <script type="text/javascript" src="js/d3.v3.min.js" async defer></script>
+  <script type="text/javascript" src="js/summonbubbles.js" async defer></script>
+  
+  </footer>
+</div>	
+
+
+
+  </body>
+</html>
